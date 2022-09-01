@@ -12,7 +12,7 @@ const manifest = JSON.parse(readFileSync(routesManifest, "utf8"));
 // so Nginx will try the longer routes first.
 const routesByKeyLength = {};
 
-manifest.dynamicRoutes.concat(manifest.staticRoutes).forEach((route) => {
+manifest.dynamicRoutes.concat(manifest.staticRoutes || []).forEach((route) => {
   let keyLength = Object.keys(route.routeKeys).length;
 
   if (route.page === "/") {
