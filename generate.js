@@ -16,7 +16,7 @@ manifest.dynamicRoutes
   .concat(manifest.staticRoutes || [])
   .concat(manifest.rewrites || [])
   .forEach((route) => {
-    let keyLength = Object.keys(route.routeKeys).length;
+    let keyLength = route.routeKeys ? Object.keys(route.routeKeys).length : 9999;
 
     if (route.page === "/") {
       // Put root page at the top.
