@@ -30,7 +30,7 @@ dynamicRoutes
     routesByKeyLength[keyLength] = routesByKeyLength[keyLength] || [];
     routesByKeyLength[keyLength].push(`
 location ~ ${route.regex} {
-    try_files ${route.page || route.destination}.html /index.html;
+    try_files ${route.page || route.destination}.html =404;
 }`);
   });
 
