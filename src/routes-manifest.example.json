@@ -1,0 +1,60 @@
+{
+  "version": 3,
+  "pages404": true,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "dynamicRoutes": [
+    {
+      "page": "/[foo]",
+      "regex": "^/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "foo": "foo"
+      },
+      "namedRegex": "^/(?<foo>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/[foo]/[bar]/foo",
+      "regex": "^/([^/]+?)/([^/]+?)/foo(?:/)?$",
+      "routeKeys": {
+        "foo": "foo",
+        "bar": "bar"
+      },
+      "namedRegex": "^/(?<foo>[^/]+?)/(?<bar>[^/]+?)/foo(?:/)?$"
+    },
+    {
+      "page": "/[foo]/[bar]/[id]",
+      "regex": "^/([^/]+?)/([^/]+?)/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "foo": "foo",
+        "bar": "bar",
+        "id": "id"
+      },
+      "namedRegex": "^/(?<foo>[^/]+?)/(?<bar>[^/]+?)/(?<id>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/hello/world",
+      "regex": "^/hello/world(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/hello/world(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rewrites": []
+}
